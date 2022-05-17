@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>添加商品</title>
+    <link rel="stylesheet" href="css/add-index.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    
+    
+</head>
+
+<body>
+    <header class="bk-header">
+        <div class="logo">A22 MyBank</div>
+        <div class="menu">
+            <img src="images/nav_menu.png">
+        </div>
+        <nav>
+            <ul>
+                <li onclick="location.href='admin.html'"><span>首页</span></li>
+                <li class="selected" onclick="location.href='index.html'"><span>商品</span></li>
+                <li onclick="location.href='order.html'"><span>订单</span></li>
+                <li onclick="location.href='activity.html'"><span>活动</span></li>
+                <li onclick="location.href='user.html'">用户</li>
+            </ul>
+        </nav>
+        <div class="tool">
+            <span class="close">
+                <a href="admin-login.html"></a>
+            </span>
+            <a href="admin-login.html">退出登录</a>
+            <i class="bar"></i>
+            <span class="user">
+                <img src="images/user.png">
+                <span class="user-name">admin</span>
+                <i class="iconfont">&#xe665;</i>
+                <div class="change" style="display: none;">
+                    <i class="iconfont">&#xe61e;</i>
+                    <span><a href="#">修改密码</a></span>
+                </div>
+            </span>
+        </div>
+    </header>
+    <aside class="admin-aside">
+        <div class="admin-nav">
+            <h3 style="margin-top:50px;">
+                <span>添加商品</span>
+                <i class="iconfont">&#xe665;</i>
+            </h3>
+            <nav>
+                <ul>
+                    <li onclick="location.href='index.html'" >商品列表</li>
+                    <li class="selected"> 添加商品 </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <section class="add-section">
+        <div class="notice">
+            <p style="font-size: 13px;">A22 MyBank > 商品 > 添加商品</p>
+        </div>
+        <div class="main">
+            <form action="editinfo.php" method="get"  id="add-form"  name="add-form">
+                <legend>添加商品信息</legend>
+                <!--<label for="index-id">商品id：</label>-->
+                <!--<input type="number" name="goods_id" id="index-id" required="required" placeholder="请输入商品id">-->
+                <!--<span>（必填）</span>-->
+                <label for="index-act-id">商品所属活动id:</label>
+                <input type="number" name="active_id" id="index-act-id" required="required" placeholder="请输入商品所属活动id" autofocus="autofocus">
+                <span id="error-id" style="display:none;"></span>
+                <label for="index-title">商品名称：</label>
+                <input type="text" name="goods_title" id="index-title" required="required" placeholder="请输入商品名称">
+                <span id="error-title" style="display:none;">商品名称不能为空</span>
+                <label for="index-rate">商品利率/商品存期：</label>
+                <input type="number" name="goods_rate" id="index-rate" placeholder="请输入商品利率（两位小数）" min=0>
+                <span id="error-rate" style="display:none;">商品利率不能为空</span>
+                <input type="number" name="goods_term" id="index-term" placeholder="请输入商品存期（正整数）">
+                <span id="error-term" style="display:none;">商品存期不能为空</span>
+                <label for="index-nums">商品数量：</label>
+                <input type="number" name="num_total" id="index-nums" placeholder="请输入商品数量，不能小于0" min=0>
+                <span id="error-nums" style="display:none;">商品数量不能为空</span>
+                <label for="index-normal-price">商品原价/秒杀价：</label>
+                <input type="number" name="goods_price_normal" id="index-normal-price" placeholder="请输入商品的原价" min=0>
+                <span id="error-normal" style="display:none;">商品原价不能为空</span>
+                <input type="number" name="goods_price_discount" id="index-discount-price" placeholder="请输入商品秒杀价" min=0>
+                <span id="error-discount" style="display:none;">商品秒杀价不能为空</span>
+                <label for="nums-user">单个用户限购数量</label>
+                <input type="number" name="num_user" id="nums-user" placeholder="请输入限购数量" min=0>
+                <span id="error-user" style="display:none;">限购数量不能为空</span>
+                <br>
+                <button class="add-btn" type="button">确定</button>
+                <button class="back-btn" onclick="location.href='index.html'">返回</button>
+            </form>
+        </div>
+    </section>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/add-index.js"></script>
+</body>
+
+</html>

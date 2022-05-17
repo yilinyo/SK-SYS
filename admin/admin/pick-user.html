@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>用户筛选配置</title>
+    <link rel="stylesheet" href="css/pick-user.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    
+    
+</head>
+
+<body>
+    <header class="bk-header">
+        <div class="logo">A22 MyBank</div>
+        <div class="menu">
+            <img src="images/nav_menu.png">
+        </div>
+        <nav>
+            <ul>
+                <li onclick="location.href='admin.html'"><span>首页</span></li>
+                <li onclick="location.href='index.html'"><span>商品</span></li>
+                <li onclick="location.href='order.html'"><span>订单</span></li>
+                <li onclick="location.href='activity.html'"><span>活动</span></li>
+                <li class="selected" onclick="location.href='user.html'">用户</li>
+            </ul>
+        </nav>
+        <div class="tool">
+            <span class="close">
+                <a href="admin-login.html"></a>
+            </span>
+            <a href="admin-login.html">退出登录</a>
+            <i class="bar"></i>
+            <span class="user">
+                <img src="images/user.png">
+                <span class="user-name">admin</span>
+                <i class="iconfont">&#xe665;</i>
+                <div class="change" style="display: none;">
+                    <i class="iconfont">&#xe61e;</i>
+                    <span><a href="#">修改密码</a></span>
+                </div>
+            </span>
+        </div>
+    </header>
+    <aside class="admin-aside">
+        <div class="admin-nav">
+            <h3 style="margin-top:50px;">
+                <span>筛选配置</span>
+                <i class="iconfont">&#xe665;</i>
+            </h3>
+            <nav>
+                <ul>
+                    <li onclick="location.href='user.html'">用户列表</li>
+                    <li class="selected"> 用户筛选配置 </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <section class="add-section">
+        <div class="notice">
+            <p style="font-size: 13px;">A22 MyBank > 用户 > 用户筛选配置</p>
+        </div>
+        <div class="main">
+            <form action="editinfo.php" method="get"  id="add-form"  name="add-form">
+                <legend>更改用户筛选配置</legend>
+                <!--<label for="index-id">商品id：</label>-->
+                <!--<input type="number" name="goods_id" id="index-id" required="required" placeholder="请输入商品id">-->
+                <!--<span>（必填）</span>-->
+                <label for="user-age">最小年龄限制:</label>
+                <input type="number" name="user_age" id="user-age" required="required" placeholder="输入大于16小于20" autofocus="autofocus">
+                <span id="error-id" style="display:none;"></span>
+                <label for="user-credit">最小信用度限制:</label>
+                <input type="number" name="user_id" id="user-credit" required="required" placeholder="输入大于0小于100" autofocus="autofocus">
+                <span id="error-credit" style="display:none;"></span>
+                <br>
+                <button class="add-btn" type="button">设置</button>
+                <button class="back-btn" onclick="location.href='activity.html'">返回</button>
+            </form>
+        </div>
+    </section>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/pick-user.js"></script>
+</body>
+
+</html>

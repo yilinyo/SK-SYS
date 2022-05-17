@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>A22 MyBank - 商家管理</title>
+    <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    
+</head>
+
+<body>
+    <header class="bk-header">
+        <div class="logo">A22 MyBank</div>
+        <div class="menu">
+            <img src="images/nav_menu.png">
+        </div>
+        <nav>
+            <ul>
+                <li onclick="location.href='admin.html'"><span>首页</span></li>
+                <li onclick="location.href='index.html'"><span>商品</span></li>
+                <li class="selected" onclick="location.href='order.html'"><span>订单</span></li>
+                <li onclick="location.href='activity.html'"><span>活动</span></li>
+                <li onclick="location.href='user.html'">用户</li>
+            </ul>
+        </nav>
+        <div class="tool">
+            <span class="close">
+                <a href="admin-login.html"></a>
+            </span>
+            <a href="admin-login.html">退出登录</a>
+            <i class="bar"></i>
+            <span class="user">
+                <img src="images/user.png">
+                <span class="user-name">admin</span>
+                <i class="iconfont">&#xe665;</i>
+                <div class="change" style="display: none;">
+                    <i class="iconfont">&#xe61e;</i>
+                    <span><a href="#">修改密码</a></span>
+                </div>
+            </span>
+        </div>
+    </header>
+    <aside class="admin-aside">
+        <div class="admin-nav">
+            <h3 style="margin-top:50px;">
+                <span>订单页面</span>
+                <i class="iconfont">&#xe665;</i>
+            </h3>
+            <nav>
+                <ul>
+                    <li class="selected"> 订单列表 </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <section class="index-section">
+        <div class="notice">
+            <p style="font-size: 13px;">A22 MyBank > 订单 > 订单列表</p>
+        </div>
+        <div class="main">
+            <div class="select">
+                请输入需要查询的订单ID：<input type="search" name="" id="select-input" value="" />
+                <span class="select-btn">确定</span>
+            </div>
+            <table class="order-table">
+                <thead>
+                    <th>ID</th>
+                    <th>用户名</th>
+                    <th>订单活动名称</th>
+                    <th>订单商品名称</th>
+                    <th>商品详情<span style="color:#999;font-size:12px;">（利率/存期）</span></th>
+                    <th>购买数量</th>
+                    <th>订单金额<span style="color:#999;font-size:12px;">(秒杀价)</span></th>
+                    <th>订单时间</th>
+                    <th>创建时间</th>
+                    <th>订单状态</th>
+                    <th>操作</th>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="noorder" style="display:none;margin-top:10px;margin-bottom:500px;font-size:13px;text-align: center;">
+                没有找到和需要查询的订单号匹配的订单哦，再试试看吧
+            </div>
+            <div style="height:50px">
+                <div id="page" class="page" style="float:right;margin-right:5px;margin-top:13px"></div>
+                <div class="page-input" >
+                    第<input type="number" id="page-input" value="1" style="width:40px;margin:0px 2px"/>页
+                <span id="gopage">跳转</span>
+                <span style="background-color:#fff;color:black" id="pre-page">上一页</span> 
+                <span style="background-color:#fff;color:black" id="next-page">下一页</span>
+                <span style="background-color:#fff;color:black;width:100px;font-size:14px;" id="now-page"></span>
+                </div>
+            </div>
+            <div class="order-charts">
+                
+            </div>
+        </div>
+    </section>
+    <script src="js/jquery.js"></script>
+    <script src="js/echarts.js"></script>
+    <script type="text/javascript" src="js/order.js"></script>
+</body>
+
+</html>

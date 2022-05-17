@@ -1,0 +1,84 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : fcds
+ Source Server Type    : MySQL
+ Source Server Version : 50730
+ Source Host           : 172.31.32.232:3306
+ Source Schema         : sxfcds2100850
+
+ Target Server Type    : MySQL
+ Target Server Version : 50730
+ File Encoding         : 65001
+
+ Date: 16/04/2022 17:21:08
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for sk_goods
+-- ----------------------------
+DROP TABLE IF EXISTS `sk_goods`;
+CREATE TABLE `sk_goods`  (
+  `goods_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '秒杀商品id',
+  `active_id` bigint(20) UNSIGNED NOT NULL DEFAULT 0 COMMENT '对应活动id',
+  `goods_title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '商品名称',
+  `goods_rate` decimal(10, 2) NOT NULL DEFAULT 0.00 COMMENT '商品利率',
+  `goods_term` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '存期 /月',
+  `goods_price_normal` int(10) UNSIGNED NOT NULL DEFAULT 10000 COMMENT '原价',
+  `goods_price_discount` int(10) UNSIGNED NOT NULL DEFAULT 10000 COMMENT '秒杀价',
+  `num_total` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '总数目',
+  `num_left` int(11) UNSIGNED NOT NULL DEFAULT 0 COMMENT '剩余库存',
+  `num_user` int(10) UNSIGNED NOT NULL DEFAULT 1 COMMENT '单用户可购数量',
+  `sys_dateline` int(11) NOT NULL DEFAULT 0 COMMENT '信息创建时间',
+  `sys_lastmodify` int(11) NULL DEFAULT 0 COMMENT '最后修改时间',
+  `sys_status` int(11) NOT NULL DEFAULT 0 COMMENT '状态：0待上线 1已上线 2已下线',
+  PRIMARY KEY (`goods_id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of sk_goods
+-- ----------------------------
+INSERT INTO `sk_goods` VALUES (1, 1, '理财产品0', 2.25, 123, 123, 122, 501, 297, 1, 1646554142, 1649324631, 1);
+INSERT INTO `sk_goods` VALUES (2, 5, '招财宝', 2.30, 13, 188, 122, 2716, 2709, 1, 1646556955, 1649324547, 1);
+INSERT INTO `sk_goods` VALUES (3, 4, '高息理财宝', 3.33, 12, 10000, 5000, 100, 99, 1, 1646557111, 1649324609, 2);
+INSERT INTO `sk_goods` VALUES (4, 5, '理财产品C', 2.23, 24, 1288, 888, 103, 98, 5, 1646626565, 1649324601, 1);
+INSERT INTO `sk_goods` VALUES (5, 4, '理财产品D', 4.01, 18, 18888, 1688, 199, 0, 1, 1646626604, 1647667879, 1);
+INSERT INTO `sk_goods` VALUES (6, 4, '理财产品E', 5.20, 12, 8000, 7777, 104003, 4478, 1, 1646627720, 1650031360, 1);
+INSERT INTO `sk_goods` VALUES (7, 1, '理财产品F', 1.32, 24, 10000, 8888, 100, 99, 4, 1646627784, 1647667903, 1);
+INSERT INTO `sk_goods` VALUES (8, 5, '余额宝', 1.30, 12, 1, 1, 100, 97, 1, 1646916646, 1649171343, 1);
+INSERT INTO `sk_goods` VALUES (9, 5, '理财产品E', 3.34, 12, 12000, 10000, 14, 14, 1, 1647155762, 1649171386, 2);
+INSERT INTO `sk_goods` VALUES (10, 7, '招财宝A', 1.22, 25, 111, 11, 12, 10, 1, 1647236239, 1647667734, 1);
+INSERT INTO `sk_goods` VALUES (11, 4, '秒杀商品X', 5.40, 24, 2000, 1800, 5300, 5288, 1, 1647524382, 1647667009, 1);
+INSERT INTO `sk_goods` VALUES (12, 1, '定期宝', 5.30, 24, 12200, 12000, 5000, 4998, 2, 1647524476, 1647524476, 1);
+INSERT INTO `sk_goods` VALUES (13, 4, '秒杀商品N', 2.50, 5, 1000, 8000, 2000, 1990, 1, 1647524556, 1647667893, 1);
+INSERT INTO `sk_goods` VALUES (14, 7, '秒杀产品v', 2.90, 1, 17999, 17000, 1001, 998, 1, 1647524698, 1647667877, 1);
+INSERT INTO `sk_goods` VALUES (15, 5, '活动产品x', 5.20, 24, 1000, 900, 4000, 3995, 1, 1647524758, 1649171369, 1);
+INSERT INTO `sk_goods` VALUES (16, 4, '秒杀商品M', 5.20, 24, 1500, 1300, 10000, 1000, 1, 1647524828, 1647667860, 1);
+INSERT INTO `sk_goods` VALUES (17, 4, '秒杀商品I', 3.10, 24, 1850, 1800, 2011, 2006, 1, 1647524860, 1647667840, 1);
+INSERT INTO `sk_goods` VALUES (18, 5, '定期宝I', 3.00, 24, 1500, 1400, 500, 500, 1, 1647524888, 1649171360, 0);
+INSERT INTO `sk_goods` VALUES (19, 4, '理财产品X', 5.40, 24, 2000, 1800, 5300, 5291, 1, 1647592359, 1647666971, 1);
+INSERT INTO `sk_goods` VALUES (20, 4, '理财产品11', 2.25, 24, 1111, 1000, 1088, 1080, 1, 1647668156, 1647668156, 1);
+INSERT INTO `sk_goods` VALUES (21, 5, '理财产品12', 1.25, 12, 18888, 10000, 10100, 0, 1, 1647668208, 1649331327, 1);
+INSERT INTO `sk_goods` VALUES (22, 5, '理财产品13', 2.25, 24, 1288, 1088, 2500, 2498, 2, 1647668254, 1649324615, 1);
+INSERT INTO `sk_goods` VALUES (23, 5, '理财产品14', 1.25, 11, 3500, 3000, 280, 276, 1, 1647668356, 1647668356, 1);
+INSERT INTO `sk_goods` VALUES (24, 5, '理财产品15', 3.36, 12, 2222, 1111, 1666, 1663, 1, 1647668398, 1647668398, 1);
+INSERT INTO `sk_goods` VALUES (25, 5, '理财产品17', 2.25, 12, 8888, 8885, 18, 16, 1, 1647668452, 1647668452, 1);
+INSERT INTO `sk_goods` VALUES (26, 8, '理财产品16', 4.33, 24, 1288, 888, 120, 120, 1, 1647668487, 1649171497, 1);
+INSERT INTO `sk_goods` VALUES (27, 7, '理财产品18', 3.33, 12, 1288, 1088, 120, 116, 1, 1647668520, 1647668520, 1);
+INSERT INTO `sk_goods` VALUES (28, 6, '理财产品19', 2.25, 21, 1288, 1088, 240, 240, 1, 1647668560, 1647668560, 1);
+INSERT INTO `sk_goods` VALUES (29, 6, '理财产品20', 3.33, 24, 1222, 1000, 1231, 1231, 1, 1647668583, 1647668590, 1);
+INSERT INTO `sk_goods` VALUES (30, 6, '理财产品21', 3.30, 24, 888, 999, 1111, 1111, 2, 1647668771, 1647668771, 1);
+INSERT INTO `sk_goods` VALUES (31, 6, '理财产品22', 3.33, 28, 888, 777, 1222, 1222, 1, 1647668818, 1647668818, 1);
+INSERT INTO `sk_goods` VALUES (32, 7, '理财产品25', 1.25, 24, 388, 233, 1288, 1285, 1, 1647752245, 1647752245, 1);
+INSERT INTO `sk_goods` VALUES (33, 7, '理财产品26', 1.23, 22, 1222, 1111, 122, 119, 1, 1647752720, 1647752720, 1);
+INSERT INTO `sk_goods` VALUES (34, 4, '理财商品28', 1.25, 24, 1, 1, 123, 120, 1, 1647754034, 1649487542, 1);
+INSERT INTO `sk_goods` VALUES (35, 6, '理财产品29', 3.33, 12, 288, 188, 12, 12, 1, 1647754610, 1647754610, 1);
+INSERT INTO `sk_goods` VALUES (36, 8, '理财产品30', 3.33, 24, 1088, 1000, 128, 128, 1, 1647783927, 1649171418, 1);
+INSERT INTO `sk_goods` VALUES (37, 8, '理财产品31', 1.84, 24, 1288, 1200, 108, 107, 1, 1647783959, 1649171426, 1);
+INSERT INTO `sk_goods` VALUES (38, 8, '理财产品32', 3.33, 12, 1245, 888, 122, 121, 1, 1647783983, 1649171434, 1);
+INSERT INTO `sk_goods` VALUES (39, 8, '理财产品33', 2.25, 12, 1221, 1200, 223, 220, 1, 1647784094, 1649171442, 1);
+
+SET FOREIGN_KEY_CHECKS = 1;

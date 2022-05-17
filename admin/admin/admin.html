@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>A22 MyBank - 商家管理</title>
+    <link rel="stylesheet" href="css/admin2.css">
+    <link rel="stylesheet" href="fonts/iconfont.css">
+    
+
+</head>
+
+<body>
+    <header class="bk-header">
+        <div class="logo">A22 MyBank</div>
+        <div class="menu">
+            <img src="images/nav_menu.png">
+        </div>
+        <nav>
+            <ul>
+                <li class="selected" onclick="location.href='admin.html'"><span>首页</span></li>
+                <li onclick="location.href='index.html'"><span>商品</span></li>
+                <li onclick="location.href='order.html'"><span>订单</span></li>
+                <li onclick="location.href='activity.html'"><span>活动</span></li>
+                <li onclick="location.href='user.html'">用户</li>
+            </ul>
+        </nav>
+        <div class="tool">
+            <span class="close">
+                <a href="admin-login.html"></a>
+            </span>
+            <a href="admin-login.html">退出登录</a>
+            <i class="bar"></i>
+            <span class="user">
+                <img src="images/user.png">
+                <span class="user-name">admin</span>
+                <i class="iconfont">&#xe665;</i>
+                <div class="change" style="display: none;">
+                    <i class="iconfont">&#xe61e;</i>
+                    <span><a href="#">修改密码</a></span>
+                </div>
+            </span>
+        </div>
+    </header>
+    <aside class="admin-aside">
+        <div class="admin-nav">
+            <h3 style="margin-top:50px;">
+                <span>首页</span>
+                <i class="iconfont">&#xe665;</i>
+            </h3>
+            <nav>
+                <ul>
+                    <li class="selected"> 欢迎页 </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <section class="admin-section">
+        <div class="notice">
+            <ul>
+                <li>网站名称：A22 MyBank管理系统</li>
+                <li>最后登录时间：2022-2-27 1</li>
+                <li>最后登录用户：admin</li>
+            </ul>
+        </div>
+        <div style="height:40px"></div>
+        <!-- <div style="position: relative;margin:0px;"></div> -->
+        <div class="main">
+            <div class="main-info">
+                <ul>
+                    <li>
+                        <div class="item">
+                            <div class="left"><i class="iconfont" style="color:#25b195">&#xe65d;</i></div>
+                            <div class="right">
+                                <strong id="total-price">0</strong>
+                                <p>秒杀总金额（元）</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="left"><i class="iconfont" style="color:#f5ad14">&#xe610;</i></div>
+                            <div class="right">
+                                <strong id="goods_nums">0</strong>
+                                <p>商品发布（个）</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="left"><i class="iconfont" style="color:#708bb1">&#xe606;</i></div>
+                            <div class="right">
+                                <strong id="active_nums">0</strong>
+                                <p>秒杀活动（场）</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="left"><i class="iconfont" style="color:#e74c3f">&#xe600;</i></div>
+                            <div class="right">
+                                <strong id="order_nums">0</strong>
+                                <p>订单总数（笔）</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <div class="left"><i class="iconfont" style="color:#279cff">&#xe69f;</i></div>
+                            <div class="right">
+                                <strong id="user_nums">0</strong>
+                                <p>用户人数（人）</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="sale-info">
+                <div class="top">
+                    <p class="title">销售情况统计</p>
+                    <p style="font-size:12px;color:#999">按周期统计商家店铺的订单量和订单金额</p>
+                </div>
+                <div class="sale-main">
+                    <div class="last-info">
+                        <div class="sale-left">过去场的销量情况</div>
+                        <div class="sale-right">
+                            <p>订单量:<span id="pre-trade-nums">0</span>（件）</p>
+                            <p>订单金额:<span id="pre-trade-price">0</span>（元）</p>
+                        </div>
+                    </div>
+                    <div class="now-info">
+                        <div class="sale-left">当前进行场的销量情况</div>
+                        <div class="sale-right">
+                            <p>订单量:<span id="now-trade-nums">0</span>（件）</p>
+                            <p>订单金额:<span id="now-trade-price">0</span>（元）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="active-info" style="font-size:25px;"></div>
+            <div class="help-info">
+                <div class="top">
+                    <p class="title">商家帮助</p>
+                    <p style="font-size:12px;color:#999">您可能需要的商家帮助</p>
+                </div>
+                <div class="bottom">
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                                <img src="images/index.png" alt="#">
+                                <p>商品管理</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/promotions.png" alt="#">
+                                <p>场次安排</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="order.html">
+                                <img src="images/order_after.png" alt="#">
+                                <p>订单详情</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="user-info">
+                <div class="top">
+                    <p class="title">用户信息</p>
+                    <p style="font-size:12px;color:#999">用户限制条件及用户人数</p>
+                </div>
+                <div class="user-limit">
+                    <div class="limit-left">
+                        用户限制条件
+                    </div>
+                    <div class="limit-right">
+                        <p>最小年龄限制:<span id="blackUsernum">0</span></p>
+                        <p>最低信用度限制<span id="errorUsernum">0</span></p>
+                    </div>
+                </div>
+                <div class="user-charts">
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/jquery.js"></script>
+    <script src="js/echarts.js"></script>
+    <script type="text/javascript" src="js/admin2.js"></script>
+</body>
+
+</html>
